@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "bedcalculator",
+  "version": "1.0.0",
+  "name": "BedCalculator",
+  "description": "calculates the bedrock in any server using custom GUI, input seed in GUI",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/bedcalculator/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "me.RockBed.bedcalculator.client.BedcalculatorDataGenerator"
+    ],
+    "client": [
+      "me.RockBed.bedcalculator.client.BedcalculatorClient"
+    ],
+    "main": [
+      "me.RockBed.bedcalculator.Bedcalculator"
+    ]
+  },
+  "mixins": [
+    "bedcalculator.mixins.json",
+    {
+      "config": "bedcalculator.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "fabric-api": "*",
+    "minecraft": "26.1.2"
+  }
+}
